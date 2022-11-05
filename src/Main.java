@@ -1,13 +1,19 @@
 public class Main {
 
     public static void main(String[] args) {
-        double preostaliDug = 200000;
-        double kamatnaStopa = 8;
+        double vrednostStana = 273000;
+        double ucesceProcenat = 20;
+        double ucesceSuma = vrednostStana * ucesceProcenat / 100;
+        double preostaliDug = vrednostStana * (100 - ucesceProcenat) / 100;
+        final double iznosKredita = preostaliDug;
+        double kamatnaStopa = 6.95;
         int brojGodinaOtplate = 20;
-        int mesecnaDoplata = 1000;
+        int mesecnaDoplata = 800;
 
         double mesecnaRata = izracunajMesecnuRatu(preostaliDug, kamatnaStopa, brojGodinaOtplate);
 
+        System.out.println("Vrednost stana: " + (int) vrednostStana);
+        System.out.println("Ucesce: " + (int) ucesceSuma);
         System.out.println("Iznos kredita: " + (int) preostaliDug);
         System.out.println("Kamatna Stopa: " + kamatnaStopa);
         System.out.println("Godine otplate: " + brojGodinaOtplate);
@@ -28,6 +34,7 @@ public class Main {
             if (preostaliDug < 0) {
                 ukupanTrosakKredita = ukupanTrosakKredita + preostaliDug;
                 System.out.println("Ukupan trosak kredita: " + (int) ukupanTrosakKredita);
+                System.out.println("Banci poklonili: " + (int) (ukupanTrosakKredita - iznosKredita));
                 break;
             }
         }
