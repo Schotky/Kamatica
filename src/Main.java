@@ -2,12 +2,12 @@ public class Main {
 
     public static void main(String[] args) {
         // sa garazom 15k + <220k, bez garaze 250k
-        double vrednostStana = 224000;
-        double ucesceProcenat = 20;
+        double vrednostStana = 247000;
+        double ucesceProcenat = 25;
         double ucesceSuma = vrednostStana * ucesceProcenat / 100;
         double preostaliDug = vrednostStana * (100 - ucesceProcenat) / 100;
         final double iznosKredita = preostaliDug;
-        double kamatnaStopa = 6.95;
+        double kamatnaStopa = 7.55;
         int brojGodinaOtplate = 20;
         int mesecnaDoplata = 1000;
 
@@ -22,7 +22,7 @@ public class Main {
 
         double ukupanTrosakKredita = 0;
 
-        for (int trenutnaGodina = 1; trenutnaGodina <= brojGodinaOtplate; trenutnaGodina++) {
+        for (int trenutnaGodina = 1; trenutnaGodina <= (brojGodinaOtplate+1); trenutnaGodina++) {
 
             double godisnjaRata = 12 * mesecnaRata;
             double godisnjaKamata = preostaliDug * kamatnaStopa / 100;
