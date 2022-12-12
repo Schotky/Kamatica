@@ -1,15 +1,14 @@
 public class Main {
 
     public static void main(String[] args) {
-        // sa garazom 15k + <220k, bez garaze 250k
-        double vrednostStana = 247000;
-        double ucesceProcenat = 25;
+        double vrednostStana = 231360;
+        double ucesceProcenat = 20;
         double ucesceSuma = vrednostStana * ucesceProcenat / 100;
         double preostaliDug = vrednostStana * (100 - ucesceProcenat) / 100;
         final double iznosKredita = preostaliDug;
         double kamatnaStopa = 7.55;
         int brojGodinaOtplate = 20;
-        int mesecnaDoplata = 1000;
+        int mesecnaDoplata = 0;
 
         double mesecnaRata = izracunajMesecnuRatu(preostaliDug, kamatnaStopa, brojGodinaOtplate);
 
